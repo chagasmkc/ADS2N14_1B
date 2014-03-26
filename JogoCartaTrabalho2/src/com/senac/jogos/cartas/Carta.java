@@ -1,17 +1,17 @@
 package com.senac.jogos.cartas;
 
-public class Carta{
+public class Carta {
     private char naipe;
     private int  valor;
     
-    public Carta(char naipe, int valor){
-        switch (naipe){
+    public Carta(char naipe, int valor) {
+        switch (naipe) {
             case 'C':
             case 'O':
             case 'P':
             case 'E':
                 this.naipe = naipe;
-                break;
+            break;
             default:
                 this.naipe = 'J';
         }
@@ -24,11 +24,11 @@ public class Carta{
         }
     }
     
-    public int getValor(){
+    public int getValor() {
         return this.valor;
     }
     
-    public char getNaipe(){
+    public char getNaipe() {
         return this.naipe;
     }
 }

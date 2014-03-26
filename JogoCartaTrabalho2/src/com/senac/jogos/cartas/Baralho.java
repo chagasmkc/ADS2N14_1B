@@ -2,34 +2,32 @@ package com.senac.jogos.cartas;
 
 public class Baralho {
 
-	private Carta[] cartas = new Carta[52];
-	private int numCartas;
+    private Carta[] cartas = new Carta[52];
+    private int numCartas;
 
-	public Baralho(){
-		numCartas = 0;
+    public Baralho() {
+        numCartas = 0;
+        char[] naipes = {'C','O','P','E'};
 
-		//char[] naipes = {'C','O','P','E'}
-		
-		char[] naipes = new char[4];
-		naipes[0] = 'C';
-		naipes[1] = 'O';
-		naipes[2] = 'P';
-		naipes[3] = 'E';
+        for (char naipe: naipes) {
+            for (int valor = 1; valor <= 13; valor++) {
+                cartas[numCartas] = new Carta(naipe,valor);
+                numCartas++;
+            }
+        }
+    }
 
-		for (char naipe: naipes){
-			for (int valor = 1; valor <= 13; valor++){
-				cartas[numCartas] = new Carta(naipe,valor);
-				numCartas++;
-			}
-		}
-	}
+    public boolean verificarSeTemCarta() {
+        return numCartas > 0;
+    }
+    
+    public Carta drawCarta() {
+        int carta = (int)(Math.random() * numCartas);
+        Carta sorteada = cartas[carta];
 
-	public Carta drawCarta(){
-		int carta = (int)(Math.random() * numCartas);
-		Carta sorteada = cartas[carta];
-		numCartas--;
-		cartas[carta] = cartas[numCartas]; 
-		return sorteada;
-	}
+        numCartas--;
 
+        cartas[carta] = cartas[numCartas]; 
+        return sorteada;
+    }
 }
