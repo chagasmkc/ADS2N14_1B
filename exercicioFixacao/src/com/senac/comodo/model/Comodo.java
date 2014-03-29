@@ -5,6 +5,7 @@ public class Comodo {
 	private String comodo;
 	private String corComodo;
 	private Double tamanhoComodo;
+	private String iluminacaoComodo;
 	
 	
 	
@@ -19,6 +20,10 @@ public class Comodo {
 	public Double getTamanhoComodo() {
 		return tamanhoComodo;
 	}
+	
+	public String iluminacao() {
+		return iluminacaoComodo;
+	}
 
 	public void setComodo(String comodo) {
 		this.comodo = comodo;
@@ -30,6 +35,10 @@ public class Comodo {
 
 	public void setTamanhoComodo(Double tamanhoComodo) {
 		this.tamanhoComodo = tamanhoComodo;
+	}
+	
+	public void setIluminacao(String iluminacaoComodo) {
+		this.iluminacaoComodo = iluminacaoComodo;
 	}
 
 }

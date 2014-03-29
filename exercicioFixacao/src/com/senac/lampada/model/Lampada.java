@@ -2,20 +2,20 @@ package com.senac.lampada.model;
 
 public class Lampada {
 	
-	private boolean estado;
+	private boolean estadoLampada;
 
 		
-	public boolean getEstado() {
-		return estado;
+	public boolean getEstadoLampada() {
+		return estadoLampada;
 	}
 	
-	public void setEstado(boolean estado) {
-		this.estado = estado;
+	public void setEstado(boolean estadoLampada) {
+		this.estadoLampada = estadoLampada;
 	}	
 
-	public Lampada(boolean estado){
-		this.estado = estado;
-		estado = true;
+	public Lampada(boolean estadoLampada){
+		this.estadoLampada = estadoLampada;
+		estadoLampada = false;
 	}
 	
 }
