@@ -7,6 +7,13 @@ public class Conta {
 	private int numVerificacao;
 	
 	
+	public Conta(int numConta, int numVerificacao) {
+		this.setNumConta(numConta);
+		this.setNumVerificacao(numVerificacao);
+		
+	}
+	
+	
 	public Double getSaldo() {
 		return saldo;
 	}
