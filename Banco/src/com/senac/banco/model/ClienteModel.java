@@ -1,6 +1,6 @@
 package com.senac.banco.model;
 
-public class Cliente {
+public class ClienteModel {
 	
 	private String nome;
 	private String Sobrenome;

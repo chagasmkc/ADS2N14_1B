@@ -1,13 +1,15 @@
 package com.senac.banco.model;
 
-public class Conta {
+
+public class ContaModel {
 	
 	private double saldo;
 	private int numConta;
 	private int numVerificacao;
 	
 	
-	public Conta(int numConta, int numVerificacao) {
+	public ContaModel(Double saldo, int numConta, int numVerificacao) {
+		this.setSaldo(saldo);
 		this.setNumConta(numConta);
 		this.setNumVerificacao(numVerificacao);
 		
@@ -40,4 +42,15 @@ public class Conta {
 		this.numVerificacao = numVerificacao;
 	}
 	
+	
+	public void depositar (double valor) {
+		this.saldo +=valor;
+	
+	}
+	
+	public void sacar(double valor) {
+		
+		this.saldo -= valor;
+	}
+		
 }
