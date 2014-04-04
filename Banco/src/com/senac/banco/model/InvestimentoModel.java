@@ -13,7 +13,7 @@ public class InvestimentoModel extends ContaModel {
 		
 	}
 	
-	public int getData() {
+	public int getDataCriacao() {
 		return dataCriacao;
 	}
 
@@ -21,6 +21,11 @@ public class InvestimentoModel extends ContaModel {
 		this.dataCriacao = dataCriacao;
 	}
 
+	
+	public void dividendos(double taxa) {
+		double credito = super.getSaldo() * (taxa/100);
+		super.setSaldo(super.getSaldo() + credito);
+	}
 
 }
 

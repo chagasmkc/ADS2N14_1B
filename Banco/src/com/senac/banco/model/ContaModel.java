@@ -1,5 +1,7 @@
 package com.senac.banco.model;
 
+import com.senac.banco.exception.SaldoInsuficienteException;
+
 
 public class ContaModel {
 	
@@ -48,7 +50,11 @@ public class ContaModel {
 	
 	}
 	
-	public void sacar(double valor) {
+	public void sacar(double valor) throws SaldoInsuficienteException {
+		
+	//	if (valor > this.getSaldo()) {
+	//		throws new SaldoInsuficienteController();
+	//	}
 		
 		this.saldo -= valor;
 	}
