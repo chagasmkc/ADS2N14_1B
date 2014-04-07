@@ -22,5 +22,18 @@ public class ContaView {
 		return ler.next();
 	}
 	
+	public String menuTipoConta () {
+		out.println("Digite uma opção:"+"\nC - Conta Comum"+"\nE - Conta Especial"+"\nI - Conta Investimento");
+		
+		return ler.next();
+	}
+	
+	public String menuTransacoesConta() {
+		out.println("Digite uma opção:"+ "\n1 - Sacar"+ "\n2 - Depositar"+ "\n3 - Investimento"+ "\n4 - Saldo"+ "\nV - Voltar");
+
+		return ler.next();
+	}
+	
+	
 	
 }
