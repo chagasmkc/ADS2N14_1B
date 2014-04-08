@@ -2,61 +2,60 @@ package com.senac.banco.model;
 
 import com.senac.banco.exception.SaldoInsuficienteException;
 
-
 public class ContaModel {
-	
+
 	private double saldo;
 	private int numConta;
 	private int numVerificacao;
-	
-	
-	public ContaModel(Double saldo, int numConta, int numVerificacao) {
-		this.setSaldo(saldo);
+
+	public ContaModel(int numConta, double saldo) {
 		this.setNumConta(numConta);
-		this.setNumVerificacao(numVerificacao);
-		
-	}
-	
-	
-	public Double getSaldo() {
-		return saldo;
-	}
-	
-	public int getConta() {
-		return numConta;
+		this.setSaldo(saldo);
 	}
 
-	public int numVerificacao() {
-		return numVerificacao;
-	}
-
-
-	
-	public void setSaldo(Double saldo) {
+	protected void setSaldo(double saldo) {
 		this.saldo = saldo;
 	}
 
-	public void setNumConta(int numConta) {
+	public double getSaldo() {
+		return this.saldo;
+	}
+
+	public int getNumConta() {
+		return this.numConta;
+	}
+
+	protected void setNumConta(int numConta) {
 		this.numConta = numConta;
+		this.setNumVerificacao();
 	}
-	
-	public void setNumVerificacao(int numVerificacao) {
-		this.numVerificacao = numVerificacao;
+
+	public void setNumVerificacao() {
+		double tamanho, numVeririficacao;
+
+		tamanho = Math.log10(this.getNumConta()) + 1;
+		numVeririficacao = Math.ceil(Math.log(Math.pow(10,tamanho) * this.getNumConta()));
+
+		while(numVeririficacao > 100){
+			numVeririficacao = Math.ceil(Math.log(numVeririficacao));
+		}
+
+		this.numVerificacao = (int) numVeririficacao;
 	}
-	
-	
-	public void depositar (double valor) {
-		this.saldo +=valor;
-	
+
+	public int getNumVerificacao() {
+		return this.numVerificacao;
 	}
-	
-	public void sacar(double valor) throws SaldoInsuficienteException {
-		
-	//	if (valor > this.getSaldo()) {
-	//		throws new SaldoInsuficienteController();
-	//	}
-		
-		this.saldo -= valor;
+
+	public void depositar(double valorDeposito) {
+		this.saldo += valorDeposito;
 	}
-		
+
+	public void sacar(double valorSaque) throws SaldoInsuficienteException {
+		if (valorSaque > this.getSaldo()) {
+			throw new SaldoInsuficienteException();
+		}
+
+		this.setSaldo(this.getSaldo() - valorSaque);
+	}
 }
