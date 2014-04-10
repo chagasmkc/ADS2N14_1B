@@ -28,7 +28,7 @@ public class InvestimentoModel extends ContaModel {
 	}
 
 	public void dividendos(double taxa) {
-		double acressimo = super.getSaldo() * (taxa/100);
+		double acrescimo = super.getSaldo() * (taxa/100);
 
 		super.setSaldo(super.getSaldo() + acressimo);
 	}
