@@ -1,6 +1,6 @@
 package com.senac.contato.model;
 
-public class ContatoModel {
+public class contatoModel {
 	
 	private String nome;
 	private String sobrenome;
