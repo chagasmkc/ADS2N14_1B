@@ -32,7 +32,7 @@ public class PessoaTest {
 			pessoa2 =  new Pessoa("OutraPessoa");
 		}
 		catch (Exception e){
-			fail("Nome 'OutraPessoa' deveria ser aceito.");
+			fail("'OutraPessoa'");
 		}
 		assertEquals("Teste","OutraPessoa",pessoa2.getNome());
 		pessoa2 = new Pessoa("SoPessoa");

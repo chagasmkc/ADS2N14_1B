@@ -21,6 +21,7 @@ public class Pessoa {
 			catch(InvalidNameException ine){throw ine;}
 			catch(Exception e){
 			}
+			
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.telefone = null;
