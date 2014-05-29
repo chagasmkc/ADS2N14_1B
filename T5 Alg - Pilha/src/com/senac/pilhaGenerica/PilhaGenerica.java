@@ -11,7 +11,7 @@ public class PilhaGenerica {
 		this.vetor =  new Object[1000000];
 	}
 	
-	public boolean ehVazio(){
+	public boolean vazio(){
 		if(this.i==-1){
 			return true;
 		}
@@ -19,20 +19,20 @@ public class PilhaGenerica {
 	}
 
 	public int tamanho(){
-		if(this.ehVazio()){
+		if(this.vazio()){
 			return 0;
 		}
 		return this.i+1;
 	}
 
 	public Object topo(){
-		if(this.ehVazio()){
+		if(this.vazio()){
 			return null;
 		}
 		return this.vetor[this.i];
 	}
 	public Object pop(){
-		if(this.ehVazio()){
+		if(this.vazio()){
 			return null;
 		}
 		return this.vetor[this.i--];
