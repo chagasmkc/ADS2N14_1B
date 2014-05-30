@@ -24,13 +24,13 @@ import java.util.Stack;
 	        System.out.println("___________________________________");
 	        System.out.println("");
 	        for (int i=0;i<10;i++){
-	        	System.out.println("Inserindo valor "+vetor[i]);
+	        	System.out.println("Insera o valor "+vetor[i]);
 	        }
 	        
 	        System.out.println("___________________________________");
 	        System.out.println("");
 	        for (int i=0;i<10;i++){
-	            System.out.println("Retirando da pilha: " + pilha.pop());       
+	            System.out.println("Retir da pilha: " + pilha.pop());       
 	 
 		}
 	}
