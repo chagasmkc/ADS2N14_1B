@@ -1,18 +1,18 @@
-package com.senac.pilhaGenerica;
+package com.senac.pilha;
 
-public class PilhaGenerica {
+public class Pilha {
 	
 	public Object[] vetor;
 	public int i;
 	
 	
-	public PilhaGenerica(){
-		this.i=-1;
-		this.vetor =  new Object[1000000];
+	public Pilha(){
+		this.i = -1;
+		this.vetor =  new Object[10000];
 	}
-	
+
 	public boolean vazio(){
-		if(this.i==-1){
+		if(this.i == -1){
 			return true;
 		}
 		return false;
@@ -22,7 +22,7 @@ public class PilhaGenerica {
 		if(this.vazio()){
 			return 0;
 		}
-		return this.i+1;
+		return this.i +1;
 	}
 
 	public Object topo(){
@@ -31,6 +31,7 @@ public class PilhaGenerica {
 		}
 		return this.vetor[this.i];
 	}
+
 	public Object pop(){
 		if(this.vazio()){
 			return null;
@@ -39,8 +40,8 @@ public class PilhaGenerica {
 	}
 
 	public void push(Object valor){
-		if(this.i < this.vetor.length-1){
-			this.vetor[++i]=valor;
+		if(this.i < this.vetor.length - 1){
+			this.vetor[++i] = valor;
 		}
 	}
 

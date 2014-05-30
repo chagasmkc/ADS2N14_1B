@@ -1,59 +1,62 @@
 package com.senac.palindromo;
 
 import java.util.Scanner;
-
-import com.senac.pilhaGenerica.PilhaGenerica;
-
+import com.senac.pilha.Pilha;
+import com.senac.view.View;
 
 public class Palindromo {
 	
-	PilhaGenerica pilha = new PilhaGenerica();
+	Pilha pilha = new Pilha();
+	View view = new View();
 	
-	Scanner entrada = new Scanner(System.in);
+	boolean controle = true;
 	int tam;
-
-	public void teste_palindromo(){
+	
+	public void verificaPalindromo(){
 		
-		System.out.println("Digite a palavra");
-		String palavra = entrada.next();
+		String palav = view.pegaPalavra();
+		tam = palav.length();
 	
-		tam = palavra.length();
-	
-		for(int i = 0 ; i <tam ; i++){
-			pilha.push(palavra.charAt(i));
+		for(int i = 0; i < tam; i++){
+			pilha.push(palav.charAt(i)); 
 		}
+		
+		int i = 0;
+		int j = tam -1;
 	
-		boolean controle=true;	
-		int i=0;
-		int j=tam-1;
-	
-		while(controle==true && i < tam & j > 0){
+		while(controle == true && i < tam &j > 0){
 			if(pilha.vetor[i]==pilha.vetor[j]){
 				i++;
 				j--;
 			}
-			
 			else
-				controle=false;
+				controle = false;
+			}
 		}
 
+	public void mostraResultado(){
 		if(controle){
-			System.out.println("Eh palindromo");
-			for(int z = 0 ; z < tam ; z++){
+			
+			view.simPalindromo();
+			for(int k = 0; k < tam; k++){
 				System.out.print(pilha.pop());
 			}
 		}
 			else
-		if(controle==false){
-			System.out.println("Nao eh palindromo");
+		if(controle == false){
 			
-			for(int z = 0 ; z < tam ; z++){
+			view.naoPalindromo();
+			for(int z = 0; z < tam; z++){
 				
 				System.out.print(pilha.pop());
-				
+			
 			}
 		
 		}
 	}
 
 }
+
+
+
+
